@@ -4,5 +4,8 @@ set (CMAKE_CXX_STRANDARD 11)
 project (MyGameEngine)
 include_directories("${PROJECT_SOURCE_DIR}/Framework/Common")
 include_directories("${PROJECT_SOURCE_DIR}/Framework/Interface")
+include_directories("${PROJECT_SOURCE_DIR}/Platform/Windows")
 add_subdirectory(Framework)
 add_subdirectory(Empty)
+add_subdirectory(Platform)
+
