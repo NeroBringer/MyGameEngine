@@ -1029,6 +1029,34 @@ void Draw()
     SwapBuffers(g_deviceContext);
 }
 
+class A
+{
+public:
+	A();
+	~A();
+
+	virtual void f() {};
+
+private:
+
+};
+
+A::A()
+{
+}
+
+A::~A()
+{
+}
+
+class B : public A
+{
+public:
+	virtual void f() {};
+protected:
+private:
+};
+
 // the WindowProc function prototype
 LRESULT CALLBACK WindowProc(HWND hWnd,
                          UINT message,
@@ -1041,6 +1069,14 @@ int WINAPI WinMain(HINSTANCE hInstance,
     LPTSTR lpCmdLine,
     int nCmdShow)
 {
+	A* pA = new B();
+	A* pA2 = new A();
+	B* pB = dynamic_cast<B*>(pA);
+	B* pB2 = dynamic_cast<B*>(pA2);
+
+	B* pBt = static_cast<B*>(pA);
+	B* pB2t = static_cast<B*>(pA2);
+
     // the handle for the window, filled by a function
     HWND hWnd;
     // this struct holds information for the window class

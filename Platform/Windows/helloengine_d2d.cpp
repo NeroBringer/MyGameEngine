@@ -60,12 +60,56 @@ LRESULT CALLBACK WindowProc(HWND hWnd,
 	WPARAM wParam,
 	LPARAM lParam);
 
+
+class A
+{
+public:
+	A();
+	~A();
+
+	virtual void f() {};
+
+private:
+
+};
+
+A::A()
+{
+}
+
+A::~A()
+{
+}
+
+class B : public A
+{
+public:
+	virtual void f() {};
+protected:
+private:
+};
+
+
 // the entry point for any Windows program
 int WINAPI WinMain(HINSTANCE hInstance,
 	HINSTANCE hPrevInstance,
 	LPTSTR lpCmdLine,
 	int nCmdShow)
 {
+
+	A* pA = new B();
+	A* pA2 = new A();
+	B* pB = dynamic_cast<B*>(pA);
+	B* pB2 = dynamic_cast<B*>(pA2);
+
+	char pAi = 5;
+
+	B* pBt = static_cast<B*>(pA);
+	B* pB2t = static_cast<B*>(pA2);
+	//int pB2i = reinterpret_cast<int>(pAi);
+
+	void* pBuff = new A();
+
 	// the handle for the window, filled by a function
 	HWND hWnd;
 	// this struct holds information for the window class

@@ -16,3 +16,6 @@ endif(NOT OPENGL_FOUND)
 
 add_executable(windows_opengl WIN32  helloengine_opengl.cpp )
 target_link_libraries(windows_d3d ${OPENGL_LIBRARIES} user32 gdi32 )
+
+add_executable(windows_d3d12 WIN32 helloengine_d3d12.cpp )
+target_link_libraries(windows_d3d user32 gdi32 )

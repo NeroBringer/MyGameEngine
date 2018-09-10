@@ -26,6 +26,7 @@ namespace My
 		static const uint8_t PATTERN_ALLOC = 0xFD;
 		static const uint8_t PATTERN_FREE = 0xFE;
 
+		Allocator();
 		Allocator(size_t data_size, size_t page_size, size_t alignment);
 		~Allocator();
 
@@ -38,7 +39,7 @@ namespace My
 		void FreeAll();
 
 	private:
-//#if define(_DEBUG)
+#ifdef _DEBUG
 		// fill a free page with debug patterns
 		void FillFreePage(PageHeader* pPage);
 
@@ -48,7 +49,7 @@ namespace My
 		// fill an allocated block with debug patterns
 		void FillAllocateBlock(BlockHeader* pBlock);
 
-//#endif
+#endif
 
 		// gets the next block
 		BlockHeader* NextBlock(BlockHeader* pBlock);
