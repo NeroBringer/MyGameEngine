@@ -1,5 +1,6 @@
 #pragma once 
 #include "IRuntimeModule.hpp"
+#include "GfxConfiguration.h"
 
 namespace My
 {
