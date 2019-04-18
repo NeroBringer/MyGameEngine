@@ -1,0 +1,18 @@
+[submodule "ispc"]
+	path = External/src/ispc
+	url = https://github.com/netwarm007/ispc.git
+[submodule "llvm-project"]
+	path = External/src/llvm-project
+	url = https://github.com/llvm/llvm-project.git
+[submodule "External/src/libpng"]
+	path = External/src/libpng
+	url = git://git.code.sf.net/p/libpng/code
+[submodule "External/src/zlib"]
+	path = External/src/zlib
+	url = https://github.com/netwarm007/zlib.git
+[submodule "External/src/opengex"]
+	path = External/src/opengex
+	url = https://github.com/netwarm007/OpenGEX.git
+[submodule "External/src/crossguid"]
+	path = External/src/crossguid
+	url = https://github.com/NeroBringer/crossguid.git
